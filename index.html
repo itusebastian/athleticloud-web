@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AthletiCloud - Modern Sports Academy Platform</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-800/50 py-6 px-8 flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                <i data-feather="cloud" class="text-white w-4 h-4"></i>
+            </div>
+            <h1 class="text-2xl font-bold gradient-text">AthletiCloud</h1>
+        </div>
+        
+        <nav class="hidden md:flex items-center space-x-8">
+            <a href="#features" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Features</a>
+            <a href="#pricing" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Pricing</a>
+            <a href="#testimonials" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Testimonials</a>
+            <a href="users.html" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">Dashboard</a>
+            <button id="themeToggle" class="p-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                <i data-feather="moon" class="hidden dark:block w-5 h-5"></i>
+                <i data-feather="sun" class="dark:hidden w-5 h-5"></i>
+            </button>
+        </nav>
+        
+        <button class="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800">
+            <i data-feather="menu" class="w-6 h-6"></i>
+        </button>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+                    Revolutionize Your Sports Academy
+                </h1>
+                <p class="text-xl md:text-2xl mb-12 opacity-95 leading-relaxed">
+                    The all-in-one platform that connects coaches, athletes, and families. Streamline operations, boost performance, and grow your academy with confidence.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <button class="bg-white text-blue-600 px-10 py-5 rounded-xl font-semibold hover:bg-gray-50 transition-all transform hover:scale-105 shadow-2xl flex items-center justify-center space-x-3">
+                        <span>Start Free Trial</span>
+                        <i data-feather="arrow-right" class="w-5 h-5"></i>
+                    </button>
+                    <button class="border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white px-10 py-5 rounded-xl font-semibold hover:bg-white/20 transition-all transform hover:scale-105 flex items-center justify-center space-x-3">
+                        <i data-feather="play" class="w-5 h-5"></i>
+                        <span>Watch Demo</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/10 to-transparent"></div>
+    </section>
+    <!-- Stats Section -->
+    <section class="py-16 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="animate-float">
+                    <div class="text-3xl md:text-5xl font-bold gradient-text mb-2">500+</div>
+                    <div class="text-gray-600 dark:text-gray-400">Academies</div>
+                </div>
+                <div class="animate-float" style="animation-delay: 0.2s;">
+                    <div class="text-3xl md:text-5xl font-bold gradient-text mb-2">50K+</div>
+                    <div class="text-gray-600 dark:text-gray-400">Athletes</div>
+                </div>
+                <div class="animate-float" style="animation-delay: 0.4s;">
+                    <div class="text-3xl md:text-5xl font-bold gradient-text mb-2">99.9%</div>
+                    <div class="text-gray-600 dark:text-gray-400">Uptime</div>
+                </div>
+                <div class="animate-float" style="animation-delay: 0.6s;">
+                    <div class="text-3xl md:text-5xl font-bold gradient-text mb-2">24/7</div>
+                    <div class="text-gray-600 dark:text-gray-400">Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Key Benefits -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Key Benefits</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 card-hover">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="grid" class="text-blue-600 dark:text-blue-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Centralized management</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Handle athletes, coaches, training camps, finances, and communication from a single dashboard.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 card-hover">
+                    <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="users" class="text-green-600 dark:text-green-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Role-based access</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Create user accounts with specific permissions (admins, coaches, specialists, accountants, parents/guardians).</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 card-hover">
+                    <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="trending-up" class="text-purple-600 dark:text-purple-400 w-6 h-极"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Scalable and flexible</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Perfect for rugby, soccer, basketball, and any other sport.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 card-hover">
+                    <div class="w-12 h-12 bg-amber-100 dark:bg-amber-900 rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="award" class="text-amber-600 dark:text-amber-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Branded experience</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Each academy gets its own domain and logo.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 card-hover">
+                    <div class="w-12 h-12 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="user" class="text-red-600 dark:text-red-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Athlete-centered</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Every profile includes medical info, performance metrics, training history, and payment records.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who is it for -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Who is it for?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="users" class="text-blue-600 dark:text-blue-400 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Parents & Guardians</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Track your child's progress and manage payments easily.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="activity" class="text-green-600 dark:text-green-400 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Coaches & Specialists</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Update performance metrics through a tablet-friendly interface.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="dollar-sign" class="text-purple-600 dark:text-purple-400 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Admins & Accounting</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Oversee billing, registrations, invoices, and subscription plans.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-amber-100 dark:bg-amber-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="home" class="text-amber-600 dark:text-amber-400 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Sports Academies & Camps</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Manage athletes, coaches, and training programs with a scalable system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">How it works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                    <h3 class="text-lg font-semibold mb-2">Sign up</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Set up your academy with your own domain and branding.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                    <h3 class="text-lg font-semibold mb-2">Add users and roles</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Manage permissions and access levels.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                    <h3 class="text-lg font-semibold mb-2">Manage athletes & camps</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Centralize profiles, metrics, and payments.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-amber-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+                    <h3 class="text-lg font-semibold mb-2">Connect your team</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Everyone stays aligned in real time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                            <i data-feather="cloud" class="text-white w-4 h-4"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">AthletiCloud</h3>
+                    </div>
+                    <p class="text-gray-400 mb-6">The complete sports academy management platform for the modern era.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Product</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Integrations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Updates</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Support</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Community</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 AthletiCloud. All rights reserved. | 
+                    <a href="mailto:info@athleticloud.com" class="text-blue-400 hover:text-blue-300">info@athleticloud.com</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+<!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold mb-4">AthletiCloud</h3>
+            <p class="text-gray-400 mb-6">The complete sports academy management platform</p>
+            <p class="text-gray-400">
+                📩 Contact: <a href="mailto:info@athleticloud.com" class="text-blue-400 hover:text-blue-300">info@athleticloud.com</a>
+            </p>
+        </div>
+    </footer>
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+            document.documentElement.classList.add('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.contains('dark');
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Initialize feather icons
+        feather.replace();
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
